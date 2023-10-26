@@ -1,0 +1,2 @@
+.R linguist-language=Rmarkdown
+*.html linguist-detectable=false
