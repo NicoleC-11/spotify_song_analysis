@@ -1,4 +1,4 @@
-# spotify_song_analysis
+# 2023 Spotify Song Analysis
  An analysis and visualisation of popular songs on Spotify in 2023.
 
 To view the whole project in RStudio, open song_analysis_project.Rmd.
