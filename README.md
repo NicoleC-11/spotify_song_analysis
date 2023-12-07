@@ -1,8 +1,18 @@
 # 2023 Spotify Song Analysis
- An analysis and visualisation of popular songs on Spotify in 2023.
-  
-To view the R markdown html document, open song_analysis_project.html.<br>
-To view the whole project in RStudio, open song_analysis_project.Rmd. spotify-2023.csv is necessary to run the project.<br>
-To view the original csv file, open spotify-2023.csv.<br>
-To find the original dataset, follow the shortcut titled "Kaggle Spotify Dataset".<br>
-To view only the raw code (not in markdown format), open song_analysis_raw.R.<br>
+ In this project, I analyzed popular songs on Spotify in 2023 to find insights on what type of songs were most popular, what made successful artists popular, and overall profit for each artist on the list.
+
+ # Data Collection
+ The dataset used is availble on [Kaggle](https://www.kaggle.com/), uploaded by Nidula Elgiriyewithana and titled ["Most Streamed Spotify Songs 2023"](https://www.kaggle.com/datasets/nelgiriyewithana/top-spotify-songs-2023/data). It was collected using the Spotify API, and includes the most frequently streamed songs on Spotify from the start of the year up until data collection, in August 2023.<br>
+
+# Data Cleaning
+For ease of use, I chose to reorder the data in descending order based on streams per song. I also gave them a ranking, to act as a unique key and allow us to see how they rank in terms of streams at a glance. Any entries with no data for streams are most likely an error in data collection, since this datset includes popular songs which should all have fairly high stream counts, so any such data was removed. Many song titles seemed to have special characters that weren't recognized by R when trying to perform actions including them, so I also opted to remove any special characters and replace them with a question mark. Lastly, because I wanted to focus on recent popular releases, I filtered for songs released after 2010 to exclude the edge cases of old singles that have high stream counts simply because they are seasonal or classics, such as Mariah Carey's "All I Want For Christmas Is You".
+
+# Data Analysis
+To determine what the most successful release dates for songs were, I created a heat map of release dates for all songs in the dataset. I also determined which artists occured most frequently in the dataset, discovering that Taylor Swift had a strong 34 songs, which is far above average. I used this information to compare metrics of Taylor Swift's songs against songs of all other artists to determine if there was a large difference or preference towards a particular type of song. Although there were some interesting outliers, there seemed to be no strong correlations, so I moved on to determining the profit each artist gained from their spotify hits (present in the datset). This allowed me to create an interactive visualization of the data using a bubble chart, displaying all the artists representing in the dataset and their combined streams, profit, and number of hit songs.
+
+# Conclusions 
+While there were no strong trends in popularity of song traits, such as how energetic or lyrical they were, most songs still fell close to an average value, especially in terms of speechiness and BPM. There are still many outliers, proving that songs don't necessarily have to adhere to a formula to be successful, but many choose not to deviate too far from the average regardless. We also note that some artists have an exceptionally high volume of hit songs, while others have only a few popular songs with a very high number of streams. This is likely the difference between a viral artist, who gains popularity quickly from one or two songs but fails to retain dedicated fans, versus those who build a brand around their music and create fans who will continue to return for each new song they create.
+
+# Further Steps
+This information could be used to determine how a new artist might choose to brand themselves, as well as what type of music they might focus on and when the best month to release new songs would be. It could also be used for streaming services such as Spotify to determine what songs they promote to certain users, such as pushing new songs from a favored artist to dedicated fans more quickly, or showing listeners with a more varied taste a wider variety of music.<br>
+For further analysis, you could choose to include the edge cases excluded from before 2010 to see what makes older songs continue to be popular to new users. You could also break down song release date into further categories to examine trends more closely, such as day of the week or month. You could also use other data included in the dataset, such as how many Spotify, Apple, or Deezer playlists each song is in, to determine which songs are most popular on each platform.
